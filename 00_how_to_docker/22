@@ -1,0 +1,5 @@
+docker-machine ssh Aiur
+
+
+#ssh into the machine
+#get the join token from the manager node (Char)

@@ -1,0 +1,10 @@
+docker service create -d --name marines --network overmind --replicas 2 -e OC_USERNAME=user -e OC_PASSWD=password 42school/marine-squad 
+
+
+
+#docker service create has option that it uses to create services 
+#--name names the service
+#--network tell the service which network to use
+#the 42school/marine-squad has environmental variables the service can you to set defaults like
+#OC_USERNAME which uses the username the was used for creating the rabbitmq service
+#OC_PASSWD which uses the password used for creating the rabbitmq service

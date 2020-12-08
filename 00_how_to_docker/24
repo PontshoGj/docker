@@ -1,0 +1,15 @@
+docker service create -d --name orbital-command --network overmind -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq
+
+
+
+
+
+
+
+
+#docker service create has option that it uses to create services 
+#--name names the service
+#--network tell the service which network to use
+#the rabbitmq has environmental variables the service can you to set defaults like
+#RABBITMQ_DEFAULT_USER which create a user
+#RABBITMQ_DEFAULT_PASS which sets the password for the user

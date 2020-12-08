@@ -1,1 +1,3 @@
-docker network create overlay overmind
+docker network create -d overlay overmind
+
+#docker network create a network the option -d tell docker which driver to user

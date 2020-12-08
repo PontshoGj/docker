@@ -1,1 +1,3 @@
 docker service ls
+
+#this command lists the services run 
