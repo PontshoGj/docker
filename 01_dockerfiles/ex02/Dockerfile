@@ -3,7 +3,7 @@ FROM ruby
 RUN apt-get update -y && apt-get install -y \
     build-essential libpq-dev sqlite3 nodejs 
 
-ONBUILD COPY app /opt/app
+ONBUILD COPY hello-world /opt/app
 
 ONBUILD WORKDIR /opt/app
 
