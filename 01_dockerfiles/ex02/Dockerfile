@@ -1,7 +1,11 @@
 FROM ruby
 
-RUN apt-get update -y && apt-get install -y \
-    build-essential libpq-dev sqlite3 nodejs 
+RUN apt-get update -y && apt-get install -y --no-install-recommends \
+    build-essential libpq-dev sqlite3 nodejs yarn git && apt-get update && apt-get upgrade
+    
+RUN gem install rails bundler
+RUN gem install rails
+RUN rails new hello-world
 
 ONBUILD COPY hello-world /opt/app
 
@@ -15,4 +19,6 @@ ONBUILD RUN rake db:migrate
 
 ONBUILD RUN rake db:seed
 
-#rails new hello-world
+#docker build -t ft-rails:on-build ./ft-rails
+#docker build -t do .
+#docker run --name ss --rm -p 3000:3000 do
