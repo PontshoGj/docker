@@ -12,10 +12,14 @@ RUN apt-get update -y && apt-get upgrade -y && \
 
 RUN wget http://dl.4players.de/ts/releases/3.12.1/teamspeak3-server_linux_amd64-3.12.1.tar.bz2
 
-RUN tar jxf teamspeak3-server_linux_amd64-$TSV.tar.bz2 && \
+RUN tar xvf *.tar.bz2 && \
     mv teamspeak3-server_linux_amd64 /opt/teamspeak && \
-    rm teamspeak3-server_linux_amd64-$TSV.tar.bz2
+    rm teamspeak3-server_linux_amd64-3.12.1.tar.bz2
 
 WORKDIR teamspeak3-server_linux_amd64
 
-ENTRYPOINT sh ts3server_minimal_runscript.sh
+ENTRYPOINT sh ./ts3server_startscript.sh
+
+
+#sudo docker run --rm -p 9987:9987/udp -p 10011:10011 -p 30033:30033 server
+#sudo docker build -t server .

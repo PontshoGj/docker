@@ -1,7 +1,7 @@
 FROM ruby
 
 RUN apt-get update -y && apt-get install -y \
-    build-essential libpq-dev sqlite3
+    build-essential libpq-dev sqlite3 nodejs 
 
 ONBUILD COPY app /opt/app
 
@@ -14,3 +14,5 @@ ONBUILD RUN bundle install
 ONBUILD RUN rake db:migrate
 
 ONBUILD RUN rake db:seed
+
+#rails new hello-world
